@@ -67,3 +67,7 @@ article.card-image {
 article.card-image>footer {
     margin: 0;
 }
+
+.tag-name {
+    margin-bottom: 1.5rem;
+}
