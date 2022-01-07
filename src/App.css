@@ -1,0 +1,69 @@
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+p, figcaption {
+    cursor: text;
+  }
+  
+h1, h2, h3, h4, h5, h6 {
+    line-height: calc(1rem * 2.25);
+    font-weight: 900 !important;
+    cursor: text;
+}
+h1#hero {
+    background-image: linear-gradient(to bottom right,#9796f0,#fbc7d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-block-end: 0.5rem;
+}
+nav #brand a {
+    all: unset;
+}
+#search button.search-btn {
+    width: auto;
+}
+#list ul a:hover, #list ul a:active{
+    background-color: #9796f0;
+}
+#list {
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 0 0 1.2rem 1.2rem;
+}
+#list ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0;
+}
+#list li {
+    list-style: none;
+    transition: all .25s ease;
+    padding: 1.2rem;
+    color: black;
+}
+#rotate{
+    animation:spin 1.5s linear infinite;
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+[aria-label="Close"]{
+    cursor: pointer;
+}
+
+dialog img {
+    max-height: calc(100vh - 15rem);
+}
+
+article.card-image {
+    padding: 0;
+    cursor: pointer;
+}
+
+article.card-image>footer {
+    margin: 0;
+}
