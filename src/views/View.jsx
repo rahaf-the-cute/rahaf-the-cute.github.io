@@ -24,7 +24,7 @@ function View(){
         setSearchParams({tag: tag, page: value});
       };
     const CustomizedPagination = styled(Pagination)`
-    * {color: #ffffff;}
+    * {color: #ffffff !important;}
     `;
     return (
     <>
