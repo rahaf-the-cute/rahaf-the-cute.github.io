@@ -4,11 +4,13 @@ import useFetch from "../hooks/useFetch";
 import Modal from "../components/Modal";
 import "../App.css";
 import { useState } from "react";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 function View(){
     let [searchParams, setSearchParams] = useSearchParams();
     const tag = searchParams.get("tag");
-    const page = searchParams.get("page") || 1;
+    const page = parseInt(searchParams.get("page")) || 1;
     const [imageURL, setImageURL] = useState(null);
     const [modal, showModal] = useState(false);
     const [imageLoading, setLoaded] = useState(true)
@@ -17,10 +19,13 @@ function View(){
         {},
         [tag, page]
       )
+      const handleChange = (event, value) => {
+        setSearchParams({tag: tag, page: value});
+      };
     return (
     <>
     <main>
-        <div clasName="tag-name" style={{"overflowX": "auto"}}>
+        <div className="tag-name" style={{"overflowX": "auto"}}>
             <h1 id="hero" style={{ padding: "1rem", "overflowWrap": "break-word" }}>#{tag}</h1>
         </div>
         {loading && (<div className="d-flex justify-content-center p-3">
@@ -41,6 +46,11 @@ function View(){
             ))}
             {open && <Modal url={imageURL} open={modal} close={showModal} setLoaded={setLoaded} imageLoading={imageLoading} />}
         </div>
+        {value && <div className="d-flex justify-content-center p-3">
+        <Stack spacing={2}>
+            <Pagination count={value?.last} size="small" page={page} color="secondary" onChange={handleChange} />
+        </Stack>
+        </div>}
     </main>
     </>
     )

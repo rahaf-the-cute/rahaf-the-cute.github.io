@@ -1,5 +1,6 @@
 * {
     font-family: 'IBM Plex Sans', sans-serif;
+    color: #ffffff !important;
 }
 
 p, figcaption {
@@ -70,4 +71,8 @@ article.card-image>footer {
 
 .tag-name {
     margin-bottom: 1.5rem;
+}
+
+svg[class*="MuiSvgIcon"] {
+    fill: #fff !important;
 }
