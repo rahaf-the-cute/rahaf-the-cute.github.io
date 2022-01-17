@@ -50,9 +50,9 @@ function View(){
             ))}
             {open && <Modal url={imageURL} open={modal} close={showModal} setLoaded={setLoaded} imageLoading={imageLoading} />}
         </div>
-        {value && <div className="d-flex justify-content-center p-3 pagination">
+        {value && <div className="d-flex justify-content-center py-3 pagination">
         <Stack spacing={2}>
-            <CustomizedPagination count={value?.last} size="small" page={page} color="secondary" onChange={handleChange} />
+            <CustomizedPagination count={value?.last} siblingCount={1} size="small" page={page} color="secondary" onChange={handleChange} />
         </Stack>
         </div>}
     </main>
