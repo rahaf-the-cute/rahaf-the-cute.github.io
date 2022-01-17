@@ -6,6 +6,7 @@ import "../App.css";
 import { useState } from "react";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 
 function View(){
     let [searchParams, setSearchParams] = useSearchParams();
@@ -22,6 +23,9 @@ function View(){
       const handleChange = (event, value) => {
         setSearchParams({tag: tag, page: value});
       };
+    const CustomizedPagination = styled(Pagination)`
+    * {color: #ffffff;}
+    `;
     return (
     <>
     <main>
@@ -46,9 +50,9 @@ function View(){
             ))}
             {open && <Modal url={imageURL} open={modal} close={showModal} setLoaded={setLoaded} imageLoading={imageLoading} />}
         </div>
-        {value && <div className="d-flex justify-content-center p-3">
+        {value && <div className="d-flex justify-content-center p-3 pagination">
         <Stack spacing={2}>
-            <Pagination count={value?.last} size="small" page={page} color="secondary" onChange={handleChange} />
+            <CustomizedPagination count={value?.last} size="small" page={page} color="secondary" onChange={handleChange} />
         </Stack>
         </div>}
     </main>

@@ -1,5 +1,8 @@
 * {
     font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.pagination > nav * {
     color: #ffffff !important;
 }
 
