@@ -25,6 +25,7 @@ function View(){
       };
     const CustomizedPagination = styled(Pagination)`
     * {color: #ffffff !important;}
+    li {padding: 0.2rem;}
     `;
     return (
     <>
