@@ -14,6 +14,7 @@ function View(){
     const page = parseInt(searchParams.get("page")) || 1;
     const [imageURL, setImageURL] = useState(null);
     const [modal, showModal] = useState(false);
+    const [mime, setMime] = useState(null);
     const [imageLoading, setLoaded] = useState(true)
     const { loading, error, value } = useFetch(
         `https://script.google.com/macros/s/AKfycbzQOgdsxPa-eow4rJ0FZNWeZ4JK1Rx3YDieGcyuVtTiiX5V535Y4OakCMgU7fzW3DVkNg/exec?type=list&tag=${tag}&page=${page}`,
@@ -42,14 +43,20 @@ function View(){
                 <article className="card-image">
                     <div style={{textAlign: "center"}}>
                     <img src={"https://imagex.aratech.co/?url=" + encodeURIComponent(item.imagePrv.replace(/^http(s|)\:\/\//, "") ) }
-                    onClick={()=> {setImageURL("https://http.rahaf.workers.dev/?" + encodeURIComponent(item.imageLink)); setLoaded(true); showModal(true)  }}
+                    onClick={()=> {setImageURL("https://http.rahaf.workers.dev/?" + encodeURIComponent(item.imageLink)); setLoaded(true); showModal(true); setMime(item.imageExt) }}
                     />
                     </div>
                     <footer><div className="d-flex"><span>{item.imageExt} - {item.imageInfo.size}</span></div></footer>
                 </article>
             </div>
             ))}
-            {open && <Modal url={imageURL} open={modal} close={showModal} setLoaded={setLoaded} imageLoading={imageLoading} />}
+            {open && <Modal url={imageURL} 
+            open={modal}
+            close={showModal} 
+            setLoaded={setLoaded} 
+            imageLoading={imageLoading}
+            mimeType={mime}
+            />}
         </div>
         {value && <div className="d-flex justify-content-center py-3 pagination">
         <Stack spacing={2}>

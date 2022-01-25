@@ -59,7 +59,7 @@ nav #brand a {
     cursor: pointer;
 }
 
-dialog img {
+dialog img, dialog video {
     max-height: calc(100vh - 15rem);
 }
 

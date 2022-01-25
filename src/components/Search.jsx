@@ -21,7 +21,7 @@ function Search(){
     useEffect(()=>{
         document.onclick = (e) => {
             if (!e.target.className.includes('list-search')) {
-                showSearch(false);
+                setShowSearch(false);
             }
         }
     }, [document])
