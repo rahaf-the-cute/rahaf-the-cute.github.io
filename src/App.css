@@ -63,6 +63,10 @@ dialog img, dialog video {
     max-height: calc(100vh - 15rem);
 }
 
+dialog video {
+    max-width: calc(100vw - 5rem);
+}
+
 article.card-image {
     padding: 0;
     cursor: pointer;
