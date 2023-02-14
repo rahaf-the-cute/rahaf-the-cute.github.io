@@ -42,7 +42,7 @@ function View(){
                 <div key={idx} className="col-lg-4 col-md-6 col-12">
                 <article className="card-image">
                     <div style={{textAlign: "center"}}>
-                    <img src={"https://imagex.aratech.co/?url=" + encodeURIComponent(item.imagePrv.replace(/^http(s|)\:\/\//, "") ) }
+                    <img src={"https://http.rahaf.workers.dev/?" + encodeURIComponent(item.imagePrv.replace(/^http(s|)\:\/\//, "") ) }
                     onClick={()=> {setImageURL("https://http.rahaf.workers.dev/?" + encodeURIComponent(item.imageLink)); setLoaded(true); showModal(true); setMime(item.imageExt) }}
                     />
                     </div>
